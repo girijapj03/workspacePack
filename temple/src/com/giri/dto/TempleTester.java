@@ -32,6 +32,7 @@ public class TempleTester {
 		dao.findAllTempleByLocationStartsWith("T");
 		dao.findAllTempleByEntryFeeGreaterThan(500);
 dao.findByLocation("Savadthi");
+dao.findAllLocations();
 	}
 
 }

@@ -152,8 +152,13 @@ public class TempleDAOImpl implements TempleDAO {
 
 	@Override
 	public Collection<String> findAllLocations() {
-		
+		Iterator<TempleDTO> itr = this.list.iterator();
+		while (itr.hasNext()) {
+			TempleDTO templerDTO = itr.next();
+			System.out.println(templerDTO.getLocation());
+		}
 		return null;
 	}
 
 }
+
