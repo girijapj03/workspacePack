@@ -1,4 +1,4 @@
-package com.giri.dto;
+package com.giri.templeEX.dto;
 
 import java.io.Serializable;
 
@@ -114,5 +114,5 @@ public class TempleDTO implements Serializable {
 
 		return super.equals(obj);
 	}
-	
+
 }
