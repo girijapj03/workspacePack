@@ -3,8 +3,9 @@ package com.giri.game.dto;
 import java.io.Serializable;
 
 import com.giri.game.dto.constant.CharacterTyp;
+import com.giri.game.dto.*;
 
-public class TransformerDTO implements Serializable{
+public class TransformerDTO implements Serializable {
 	private String name;
 	private String place;
 	private String angry;
@@ -12,8 +13,9 @@ public class TransformerDTO implements Serializable{
 	private String sad;
 	private String likeToDo;
 	private CharacterTyp type;
-	
-	public TransformerDTO() {}
+
+	public TransformerDTO() {
+	}
 
 	public TransformerDTO(String name, String place, String angry, String happy, String sad, String likeToDo,
 			CharacterTyp type) {
@@ -32,16 +34,18 @@ public class TransformerDTO implements Serializable{
 		return "TransformerDTO [name=" + name + ", place=" + place + ", angry=" + angry + ", happy=" + happy + ", sad="
 				+ sad + ", likeToDo=" + likeToDo + ", type=" + type + "]";
 	}
+
 	@Override
 	public boolean equals(Object obj) {
-	if(obj !=null)return false; 
-	if(obj instanceof TransformerDTO)	{
-		TransformerDTO change=(TransformerDTO) obj;
-		if(this.place.equals(change.place) && this.likeToDo.equals(change.likeToDo)){
-			return true;
+		if (obj != null)
+			return false;
+		if (obj instanceof TransformerDTO) {
+			TransformerDTO change = (TransformerDTO) obj;
+			if (this.place.equals(change.place) && this.likeToDo.equals(change.likeToDo)) {
+				return true;
+			}
 		}
-	}
-	
+
 		return false;
 	}
 
@@ -100,6 +104,5 @@ public class TransformerDTO implements Serializable{
 	public void setType(CharacterTyp type) {
 		this.type = type;
 	}
-	
-	
+
 }

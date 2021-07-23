@@ -1,9 +1,13 @@
 package com.giri.game.service;
 
+import java.util.List;
+
+import com.giri.game.dao.TransADAOImpl;
+import com.giri.game.dao.TransDAO;
 import com.giri.game.dto.TransformerDTO;
 
 public class TransServiceImpl implements TransService {
-
+private TransDAO dao=new TransADAOImpl();
 	@Override
 	public String validateAndSave(TransformerDTO dto) {
 		boolean nameVAlidate = false;
@@ -66,6 +70,7 @@ public class TransServiceImpl implements TransService {
 			}
 			if (likeTodoVAlidate && sadVAlidate && happyVAlidate && angryVAlidate && placeVAlidate && nameVAlidate) {
 				System.out.println("data is valid");
+				dao.save(dto);
 				return "SUCCESS";
 			}
 

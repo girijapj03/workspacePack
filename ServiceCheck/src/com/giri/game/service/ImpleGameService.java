@@ -1,9 +1,11 @@
 package com.giri.game.service;
 
+import com.giri.game.dao.GameDAO;
+import com.giri.game.dao.GameDAOImpl;
 import com.giri.game.dto.GameDTO;
 
 public class ImpleGameService implements GameService {
-
+private GameDAO dao=new GameDAOImpl();
 	@Override
 	public boolean validateAndSave(GameDTO dto) {
 		boolean nameVAlidate = false;
@@ -30,6 +32,7 @@ public class ImpleGameService implements GameService {
 		}
 		if (versionValidate && nameVAlidate) {
 			System.out.println("data is valid");
+			dao.save(dto);
 			return true;
 		}
 		return false;
