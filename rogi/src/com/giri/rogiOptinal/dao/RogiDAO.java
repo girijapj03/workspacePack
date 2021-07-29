@@ -7,6 +7,7 @@ import com.giri.rogiOptinal.dto.RogiDTO;
 import com.giri.rogiOptinal.search.RogiSearch;
 
 public interface RogiDAO {
+	boolean save(RogiDTO dto);
 Optional<RogiDTO> findOne(RogiSearch search);
 Optional<Integer> totalSize();
 Optional<RogiDTO> findByMaxAge();

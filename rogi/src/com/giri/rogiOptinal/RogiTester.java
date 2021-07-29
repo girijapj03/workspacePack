@@ -19,8 +19,20 @@ public class RogiTester {
 		Collection<RogiDTO> coll=Arrays.asList(dto,dto1,dto,dto3,dto4);
 		
 		RogiDAO dao=new RogiDAOimpl();
-		
-		System.out.println(dao.findAll());
+		dao.save(dto);
+		dao.save(dto1);
+		dao.save(dto2);
+		dao.save(dto3);
+		dao.save(dto4);
+		Optional<RogiDTO> temp=dao.findOne((r)-> r.getName().equals("Bhuvi"));
+		boolean v=temp.isPresent();
+		System.out.println("present :"+v);
+		if(temp.isPresent()) {
+			RogiDTO rogidto=temp.get();
+			System.out.println("found :"+rogidto);
+		}else {
+			System.out.println("dto not found");
+		}
 		
 		Optional<RogiDTO> dt1=dao.findByMaxAge();
 		System.out.println(dt1);

@@ -13,6 +13,11 @@ import com.giri.rogiOptinal.search.RogiSearch;
 
 public class RogiDAOimpl implements RogiDAO {
 	Collection<RogiDTO> collection = new ArrayList<RogiDTO>();
+	@Override
+	public boolean save(RogiDTO dto) {
+		boolean add=collection.add(dto);
+		return add;
+	}
 
 	@Override
 	public Optional<RogiDTO> findOne(RogiSearch search) {
@@ -80,5 +85,7 @@ public class RogiDAOimpl implements RogiDAO {
 		}));
 		return null;
 	}
+
+	
 
 }
